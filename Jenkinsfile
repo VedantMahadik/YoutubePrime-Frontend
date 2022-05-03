@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Frontend') {
             agent {
-                docker { image 'node:lts-alpine' }
+                docker { 
+                    label 'windows'
+                    image 'node:lts-alpine' 
+                }
             }
             steps {
                 sh 'node --version'
